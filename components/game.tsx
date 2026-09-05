@@ -7,7 +7,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import TriviaEditor from './trivia-editor';
 import seed from '@/data/trivia.json';
 import { isCorrect, type Trivia } from '@/lib/trivia';
-import { loadBoard, saveBoard } from '@/lib/board-client';
+import { loadBoard, saveBoard, storageDescription } from '@/lib/board-client';
 import { aiProfile, contestants, gameReducer, initialGame, money, type Difficulty } from '@/lib/game-engine';
 import { registerTriviaTools } from '@/lib/agent-tools';
 
@@ -62,6 +62,7 @@ export default function Game() {
  <Dialog open={menu} onOpenChange={setMenu}><DialogContent className="modal"><DialogTitle>Game menu</DialogTitle><DialogDescription>Set the challenge, customize the board, or start fresh.</DialogDescription>
  <div className="field"><span id="difficulty-label">Opponent difficulty</span><Select value={difficulty} onValueChange={v=>{if(v)setDifficulty(v as Difficulty);}}><SelectTrigger aria-labelledby="difficulty-label"><SelectValue/></SelectTrigger><SelectContent><SelectItem value="relaxed">Relaxed</SelectItem><SelectItem value="standard">Standard</SelectItem><SelectItem value="expert">Expert</SelectItem></SelectContent></Select></div>
  <p className="muted">Atlas is slower and more accurate. Nova buzzes faster and takes more risks. Harder clues are tougher for both.</p>
+ <p className="notice">{storageDescription}</p>
  <div className="actions"><button className="btn gold" disabled={!loaded} onClick={()=>{setMenu(false);setEditor(true);}}><BookOpen size={16}/>Edit categories & questions</button><button className="btn" disabled={!loaded} onClick={()=>setRestart(true)}><RotateCcw size={16}/>New game</button></div>
  <div className="result"><strong>How to play</strong><ol className="history"><li>Choose a clue. Everyone gets a few seconds to read it.</li><li>When the buzzer opens, press Space or tap Buzz in.</li><li>You have 15 seconds to type your answer. “What is…” is optional.</li><li>A correct answer adds the clue’s value; a wrong answer subtracts it. Other contestants can try after a miss.</li><li>The last correct contestant picks next. Highest score after 30 clues wins; ties share the win.</li></ol></div>
  <button className="btn" onClick={()=>setMenu(false)}>Return to game</button></DialogContent></Dialog>

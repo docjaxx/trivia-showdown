@@ -3,7 +3,8 @@ import { useRef, useState } from 'react';
 import { Download, Upload, Save } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { AlertDialog, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogAction, AlertDialogCancel, AlertDialogFooter } from '@/components/ui/alert-dialog';
-import { exportBoard, loadBoard, saveBoard } from '@/lib/board-client';
+import { exportBoard, loadBoard, saveBoard, storageDescription } from '@/lib/board-client';
+import seed from '@/data/trivia.json';
 import { validateTrivia, type Trivia } from '@/lib/trivia';
 export default function TriviaEditor({trivia,revision,onClose,onSaved}:{trivia:Trivia;revision:number;onClose:()=>void;onSaved:(trivia:Trivia,revision:number)=>void}) {
  const [draft,setDraft]=useState<Trivia>(()=>structuredClone(trivia));
@@ -16,6 +17,8 @@ export default function TriviaEditor({trivia,revision,onClose,onSaved}:{trivia:T
  return <>
  <Dialog open onOpenChange={open=>{if(!open&&!busy){if(dirty)setConfirm('close');else onClose();}}}>
  <DialogContent className="modal"><DialogTitle>Trivia studio</DialogTitle><DialogDescription>Make the board your own. Each category has five clues, from $200 to $1,000. Saving starts a fresh game.</DialogDescription>
+ <p className="notice">{storageDescription}</p>
+ <button className="btn" disabled={busy} onClick={()=>exportBoard(seed)}>Download default board</button>
  <div className="actions"><button className="btn" disabled={busy} onClick={()=>exportBoard(draft)}><Download size={16}/>Export JSON</button><button className="btn" disabled={busy} onClick={()=>file.current?.click()}><Upload size={16}/>Import JSON</button><button className="btn" disabled={busy} onClick={()=>setConfirm('reload')}>Reload saved board</button></div>
  <input ref={file} type="file" accept=".json,application/json" hidden onChange={async e=>{const selected=e.target.files?.[0];e.target.value='';if(!selected)return;try{if(selected.size>100_000)throw new Error('Choose a JSON file smaller than 100 KB.');setDraft(validateTrivia(JSON.parse(await selected.text())));setCategory(0);setError('');}catch(err){setError((err as Error).message);}}}/>
  <label className="field">Board title<input maxLength={80} value={draft.title} onChange={e=>update(d=>{d.title=e.target.value;})}/></label>

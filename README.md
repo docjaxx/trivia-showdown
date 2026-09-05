@@ -10,6 +10,16 @@ Game menu → Edit categories & questions opens the trivia studio. Edit all six 
 
 ## Future Codex updates
 
+### GitHub Pages
+
+`npm run dev:pages` starts the standalone browser version. `npm run build:pages` creates `dist-pages/`, which works at either a GitHub project URL or a custom domain. The `.github/workflows/pages.yml` workflow tests, builds, and publishes on pushes to `main` once the repository's Pages source is set to **GitHub Actions**.
+
+The Pages edition stores menu edits only in the current browser. Export JSON to back up edits or move them between devices. To change the published default for every player, ask Codex to update `data/trivia.json` and push to `main`; GitHub Actions republishes the game automatically. Existing browser overrides remain intact. To return to the latest repository board, use **Download default board**, import that JSON, and save. This removes the local override so subsequent repository updates appear automatically.
+
+GitHub Pages needs no server, database, or AI API key. Do not put GitHub access tokens in the game. Codex updates the repository using your authenticated development session.
+
+### Original database-backed build
+
 - `data/trivia.json` is the editable starter board, loaded when there is no saved custom board.
 - The live saved board is stored in D1. Editing the starter JSON does **not** overwrite an existing saved custom board.
 - To update a custom board, export it in the studio, have Codex edit the JSON, then import and save it. Keep all category/clue IDs unique and maintain six categories with five clues each.

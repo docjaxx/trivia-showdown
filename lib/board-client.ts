@@ -1,4 +1,5 @@
 import { validateTrivia, type Trivia } from './trivia';
+export const storageDescription='Your categories and clues are saved to your private game.';
 export async function loadBoard():Promise<{trivia:Trivia;revision:number}> {
  const response=await fetch('/api/trivia',{cache:'no-store'}), data=await response.json() as {trivia:unknown;revision:number;error?:string};
  if(!response.ok) throw new Error(data.error || 'Could not load trivia.');
