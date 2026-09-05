@@ -1,0 +1,47 @@
+{
+  "title": "The Original Board",
+  "categories": [
+    {"id":"science","name":"Science & Nature","clues":[
+      {"id":"s1","question":"This planet is known as the Red Planet.","answer":"Mars","aliases":[]},
+      {"id":"s2","question":"Plants use sunlight to make food through this process.","answer":"Photosynthesis","aliases":[]},
+      {"id":"s3","question":"This element has the chemical symbol Au.","answer":"Gold","aliases":[]},
+      {"id":"s4","question":"This force keeps planets in orbit around the Sun.","answer":"Gravity","aliases":["gravitation"]},
+      {"id":"s5","question":"This organelle is often called the powerhouse of the cell.","answer":"Mitochondrion","aliases":["mitochondria"]}
+    ]},
+    {"id":"world","name":"World Explorer","clues":[
+      {"id":"w1","question":"The Eiffel Tower stands in this city.","answer":"Paris","aliases":[]},
+      {"id":"w2","question":"This is the largest ocean on Earth.","answer":"Pacific Ocean","aliases":["Pacific"]},
+      {"id":"w3","question":"The ancient city of Machu Picchu is in this South American country.","answer":"Peru","aliases":[]},
+      {"id":"w4","question":"This mountain range forms much of the natural border between France and Spain.","answer":"Pyrenees","aliases":[]},
+      {"id":"w5","question":"This narrow strait separates Spain from Morocco.","answer":"Strait of Gibraltar","aliases":["Gibraltar Strait","Gibraltar"]}
+    ]},
+    {"id":"history","name":"History Makers","clues":[
+      {"id":"h1","question":"He was the first president of the United States.","answer":"George Washington","aliases":["Washington"]},
+      {"id":"h2","question":"In 1969, this astronaut became the first person to walk on the Moon.","answer":"Neil Armstrong","aliases":["Armstrong"]},
+      {"id":"h3","question":"This ancient civilization built the pyramids at Giza.","answer":"Ancient Egyptians","aliases":["Egyptians","Egypt","Ancient Egypt"]},
+      {"id":"h4","question":"This 1215 English charter is also known as the Great Charter.","answer":"Magna Carta","aliases":[]},
+      {"id":"h5","question":"This Haitian revolutionary leader was known as the Black Spartacus.","answer":"Toussaint Louverture","aliases":["Toussaint L'Ouverture","Louverture","Toussaint"]}
+    ]},
+    {"id":"arts","name":"Arts & Culture","clues":[
+      {"id":"a1","question":"This artist painted the Mona Lisa.","answer":"Leonardo da Vinci","aliases":["da Vinci","Leonardo"]},
+      {"id":"a2","question":"This playwright wrote Romeo and Juliet.","answer":"William Shakespeare","aliases":["Shakespeare"]},
+      {"id":"a3","question":"A standard modern piano has this many keys.","answer":"88","aliases":["eighty-eight","eighty eight"]},
+      {"id":"a4","question":"This Dutch painter created The Starry Night in 1889.","answer":"Vincent van Gogh","aliases":["van Gogh"]},
+      {"id":"a5","question":"This Japanese art repairs broken pottery with lacquer mixed with powdered gold.","answer":"Kintsugi","aliases":["kintsukuroi"]}
+    ]},
+    {"id":"games","name":"Sports & Games","clues":[
+      {"id":"g1","question":"In chess, this piece moves in an L shape.","answer":"Knight","aliases":[]},
+      {"id":"g2","question":"A basketball free throw is worth this many points.","answer":"1","aliases":["one","one point","1 point"]},
+      {"id":"g3","question":"In tennis, this word means a score of zero.","answer":"Love","aliases":[]},
+      {"id":"g4","question":"This board game features Boardwalk and Park Place in its classic US edition.","answer":"Monopoly","aliases":[]},
+      {"id":"g5","question":"In golf, scoring three strokes under par on a hole is called this bird.","answer":"Albatross","aliases":["double eagle"]}
+    ]},
+    {"id":"words","name":"Word Play","clues":[
+      {"id":"p1","question":"A word with the opposite meaning of another word is called this.","answer":"Antonym","aliases":[]},
+      {"id":"p2","question":"This term describes a word or phrase that reads the same backward, such as racecar.","answer":"Palindrome","aliases":[]},
+      {"id":"p3","question":"Silent and listen are examples of this: words formed by rearranging the same letters.","answer":"Anagrams","aliases":["anagram"]},
+      {"id":"p4","question":"Buzz and hiss are examples of this term for words that imitate sounds.","answer":"Onomatopoeia","aliases":[]},
+      {"id":"p5","question":"This figure of speech pairs contradictory terms, as in deafening silence.","answer":"Oxymoron","aliases":[]}
+    ]}
+  ]
+}
